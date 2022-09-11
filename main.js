@@ -1,5 +1,5 @@
 const myData = {
-	appName: "BinDiffEdit",
+	appName: "BinDifEdi",
 	bin_data1: "",
 	bin_data2: "",
 	line_len: 64,
