@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>BinDifEdi</title>
+	<link rel="shortcut icon" href="icon.ico">
+</head>
+<style>
+	.flex{
+      display: flex;
+      flex-wrap: wrap;
+	  margin-bottom: 50%;
+    }
+    .item{
+      width:50%;
+      height:100px;
+    }
+	textarea{
+		font-size:large;
+	}
+	p{
+		font-family: monospace;
+	}
+</style>
+<body>
+	<div id="app">
+		<h1>{{ appName }}</h1>
+		<p>二つのファイルの比較ができる簡易的なオンラインバイナリエディタです。</p>
+		一行に表示する文字数を<button v-on:click="line_len_dec()">減らす</button><button v-on:click="line_len_inc()">増やす</button>
+		<div class="flex">
+			<div class="item">
+				<input type="file" v-on:change="bin_open1" v-on:click="binary_click"><br>
+				<p v-html="bin_diff1()"></p>
+				<p><textarea v-model="bin_data1"></textarea></p>
+				<button v-on:click="bin_save1()">ファイルに保存</button>
+			</div>
+			<div class="item">
+				<input type="file" v-on:change="bin_open2" v-on:click="binary_click"><br>
+				<p v-html="bin_diff2()"></p>
+				<p><textarea v-model="bin_data2"></textarea></p>
+				<button v-on:click="bin_save2()">ファイルに保存</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue@next" defer></script>
+	<script src="./main.js" defer></script>
+</body>
+
+</html>
