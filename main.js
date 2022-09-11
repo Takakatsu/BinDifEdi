@@ -10,7 +10,6 @@ const app = Vue.createApp({
 		return myData;
 	},
 	created() {
-		console.log("created!!");
 	},
 	methods: {
 		bin_diff1: function () {
